@@ -140,44 +140,194 @@
         redesSociales();
     }
     function crearCuerpo() {
-        let cuerpo = document.createElement('body');
-        let divToggle = document.createElement('div');
+       let cuerpo = document.createElement('div');
 
-        function toggle() {
-            let botonToggle = document.createElement('button');
+        cuerpo.style.display = "flex";
+        cuerpo.style.justifyContent = "center";
+        cuerpo.style.alignItems = "center";
+        cuerpo.style.flexDirection = "column";
+        cuerpo.style.maxWidth = "80%";
+        cuerpo.style.height = "auto";
+        cuerpo.style.marginLeft = "auto";
+        cuerpo.style.marginRight = "auto";
 
-            botonToggle.style.width = '80px';
-            botonToggle.style.height = '30px'
-            botonToggle.style.backgroundColor = '#ccc'; // Fondo gris
-            botonToggle.style.border = 'none'; // Sin borde
-            botonToggle.style.color = '#fff'; // Texto blanco
-            botonToggle.style.padding = '10px 20px'; // Espaciado interno
-            botonToggle.style.borderRadius = '20px'; // Bordes redondeados
 
-            cuerpo.appendChild(botonToggle);
+        function seccion1() {
+            let seccion1 = document.createElement('div'); //Seccion1 
+    
+            let h1seccion1 = document.createElement('h1'); //Titulo Seccion1 
+            h1seccion1.textContent = "LA IA EN HACE AÑOS"
+            seccion1.appendChild(h1seccion1);
+    
+            let divTexto1 = document.createElement('div'); //Cuerpo para divs de textos
+            seccion1.appendChild(divTexto1);
+    
+            let texto1 = document.createElement('div'); // TEXTO 1 SECCION 1
+            texto1.innerHTML = `<p>
+             La IA es muy buena y me gusta mucho, últimamente lo está haciendo muy bien y eso me gusta aún más.
+             </p>`;
+    
+            texto1.style.marginRight = "30px";
+            texto1.style.width = "50%"; // Ancho definido para el ejemplo
+            texto1.style.height = "100%"; // Altura definida para el ejemplo
+            texto1.style.display = "flex";
+            texto1.style.justifyContent = "center";
+            texto1.style.alignItems = "center";
+            texto1.style.padding = "10px";
+            texto1.style.fontSize = "20px";
+    
+    
+            let imagen1 = document.createElement('div');//TEXTO 2 SECCION 1
+            let image2 = document.createElement('img');
+            image2src = 'assets/logoHeader.jpeg';
+            image2.alt = "Imagen de IA 1";
+            imagen1.append(image2);
+    
+            imagen1.style.marginLeft = "30px";
+            imagen1.style.width = "50%"; // Ancho definido para el ejemplo
+            imagen1.style.height = "100%"; // Altura definida para el ejemplo
+            imagen1.style.display = "flex";
+            imagen1.style.justifyContent = "center";
+            imagen1.style.alignItems = "center";
+            imagen1.style.padding = "10px";
+            image2.style.maxWidth = '100%';
+            image2.style.width = "80%";
+            image2.style.maxHeight = '100%';
+            image2.style.backgroundColor = 'red';
+    
+            divTexto1.appendChild(texto1); //Añadimos a la primera seccion ambos divs al mismo nivel
+            divTexto1.appendChild(imagen1);
+    
+            divTexto1.style.backgroundColor = "yellow";
+            divTexto1.style.display = "flex";
+            divTexto1.style.justifyContent = "center";
+            divTexto1.style.alignItems = "center";
+            divTexto1.style.height = "auto";
+            divTexto1.style.marginLeft = "auto";
+            divTexto1.style.marginRight = "auto";
+            divTexto1.style.width = "100%";
+    
+    
+            seccion1.style.backgroundColor = 'blue';
+            seccion1.style.display = "flex";
+            seccion1.style.justifyContent = "center";
+            seccion1.style.alignItems = "center";
+            seccion1.style.flexDirection = "column";
+            seccion1.style.height = "auto";
+            seccion1.style.width = "100%";
+            seccion1.style.marginTop = '20px';
+            return seccion1;
         }
     
+        let seccion1Element = seccion1();
+        cuerpo.appendChild(seccion1Element);
+       
+       
 
-        cuerpo.style.backgroundColor = 'red'
-        cuerpo.style.height = '100vh';
-        cuerpo.style.width = '100vw';
-        cuerpo.style.display = 'flex';
-        cuerpo.style.justifyContent = 'start';
-        cuerpo.style.alignItems = 'center';
-        cuerpo.style.flexDirection = 'column';
-        cuerpo.style.maxWidth = '80%';
-        cuerpo.style.marginLeft = 'auto';
-        cuerpo.style.marginRight = 'auto';
-        cuerpo.style.maxWidth = '80%';
-        cuerpo.style.marginTop = '50px';
+        function seccion2() {
+            let seccion2 = document.createElement('div'); // Seccion2 
+        
+            let h1seccion2 = document.createElement('h1'); // Titulo Seccion2 
+            h1seccion2.textContent = "LA IA EN HACE AÑOS";
+            seccion2.appendChild(h1seccion2);
+        
+            let divTexto2 = document.createElement('div'); // Cuerpo para divs de textos
+            seccion2.appendChild(divTexto2);
+        
+            let texto2 = document.createElement('div'); // TEXTO 1 SECCION 2
+            texto2.innerHTML = `<p>
+                La IA es muy buena y me gusta mucho, últimamente lo está haciendo muy bien y eso me gusta aún más.
+            </p>`;
+            
+            texto2.style.marginRight = "30px";
+            texto2.style.width = "50%"; // Ancho definido para el ejemplo
+            texto2.style.height = "100%"; // Altura definida para el ejemplo
+            texto2.style.display = "flex";
+            texto2.style.justifyContent = "center";
+            texto2.style.alignItems = "center";
+            texto2.style.padding = "10px";
+            texto2.style.fontSize = "20px";
+        
+        
+            let imagen2 = document.createElement('div');// TEXTO 2 SECCION 2
+            let image2 = document.createElement('img');
+            image2.src = 'assets/logoHeader.jpeg';
+            image2.alt = "Imagen de IA 1";
+            imagen2.appendChild(image2);
+        
+            imagen2.style.marginLeft = "30px";
+            imagen2.style.width = "50%"; // Ancho definido para el ejemplo
+            imagen2.style.height = "100%"; // Altura definida para el ejemplo
+            imagen2.style.display = "flex";
+            imagen2.style.justifyContent = "center";
+            imagen2.style.alignItems = "center";
+            imagen2.style.padding = "10px";
+            image2.style.maxWidth = '100%';
+            image2.style.width = "80%";
+            image2.style.maxHeight = '100%';
+            image2.style.backgroundColor = 'red';
+        
+            divTexto2.appendChild(texto2); // Añadimos a la segunda sección ambos divs al mismo nivel
+            divTexto2.appendChild(imagen2);
+        
+            divTexto2.style.backgroundColor = "yellow";
+            divTexto2.style.display = "flex";
+            divTexto2.style.justifyContent = "center";
+            divTexto2.style.alignItems = "center";
+            divTexto2.style.height = "auto";
+            divTexto2.style.marginLeft = "auto";
+            divTexto2.style.marginRight = "auto";
+            divTexto2.style.width = "100%";
+        
+            seccion2.style.backgroundColor = 'blue';
+            seccion2.style.display = "flex";
+            seccion2.style.justifyContent = "center";
+            seccion2.style.alignItems = "center";
+            seccion2.style.flexDirection = "column";
+            seccion2.style.height = "auto";
+            seccion2.style.width = "100%";
+            seccion2.style.marginTop = '20px';
+        
+            return seccion2;
+        }
+       
+        let seccion2Element = seccion2();
+        cuerpo.appendChild(seccion2Element);
 
 
 
 
 
-        document.body.appendChild(cuerpo);
 
-        toggle();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       document.body.appendChild(cuerpo);
         
     }
 
