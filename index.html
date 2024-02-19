@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+ 
+</style>
 <body>
     
     <header>
@@ -15,5 +18,171 @@
 </body>
 <script>
 
+    function crearHeader() {
+        let header = document.createElement('header');
+        
+        function imagenHeader() {
+            let divImagen = document.createElement('div');
+            let logoHeader = document.createElement('img');
+            let logoSrc = 'assets/logoHeader.jpeg'
+            let logoAlt = "Logo de página"
+
+            logoHeader.src = logoSrc;
+            logoHeader.alt = logoAlt;
+            
+           
+            divImagen.style.width = '20%';
+
+            divImagen.style.height = '100%';
+            divImagen.style.display = 'flex';
+            divImagen.style.justifyContent = 'center';
+            divImagen.style.alignItems = 'center';
+
+            logoHeader.style.maxWidth = '100%';
+            logoHeader.style.maxHeight = '100%';
+            logoHeader.style.backgroundColor = 'red';
+
+      
+
+            divImagen.appendChild(logoHeader);
+            header.appendChild(divImagen);
+        }
+
+        function listPrincipal() { //Funcion que crea la lista principal ("Pasado, presente y futuro")
+            let ul = document.createElement('ul');
+            let palabrasli = ["Pasado", "Presente", "Futuro"]
+            for (let i = 0; i < 3; i++) {
+            
+                let li = document.createElement('li');
+                li.textContent = palabrasli[i];
+    
+                li.style.width = '180px';
+                li.style.height = '100%';
+                li.style.display = 'flex';
+                li.style.justifyContent = 'center';
+                li.style.alignItems = 'center';
+                li.style.fontSize = '25px';
+                li.style.fontFamily = "Arial" 
+    
+                ul.appendChild(li);
+            }
+
+            ul.style.width = '60%';
+            ul.style.height = '100%';
+            ul.style.display = 'flex';
+            ul.style.justifyContent = 'center';
+            ul.style.alignItems = 'center';
+
+            header.appendChild(ul);
+        }
+        
+        function redesSociales() {
+            let divContenedor = document.createElement('div');
+
+            let divImagen1 = document.createElement('div');
+            let divImagen2 = document.createElement('div');
+            let divImagen3 = document.createElement('div');
+            
+            let logoGitHub = document.createElement('img');
+            let logoLinkedIn = document.createElement('img');
+            let logoX = document.createElement('img');
+
+            logoGitHub.src = 'assets/github.svg';
+            logoLinkedIn.src = 'assets/linkedin.svg';
+            logoX.src = 'assets/x.svg';
+
+            logoGitHub.alt = 'GitHub Logo';
+            logoLinkedIn.alt = 'LinkedIn Logo';
+            logoX.alt = 'X Logo';
+
+
+            //--------------------------------
+            logoGitHub.style.maxHeight = '100%';
+            logoGitHub.style.width = '46px'
+            logoGitHub.style.marginRight = '10px';
+            logoLinkedIn.style.maxHeight = '100%';
+            logoLinkedIn.style.width = '50px';
+            logoX.style.maxHeight = '100%';
+            logoX.style.width = '60px'
+            logoX.style.marginLeft = '10px';
+
+            //---------------------------------
+            divContenedor.style.width = '20%';
+            divContenedor.style.display = 'flex';
+            divContenedor.style.justifyContent = 'center';
+            divContenedor.style.alignItems = 'center';
+
+
+            divImagen1.appendChild(logoGitHub);
+            divImagen2.appendChild(logoLinkedIn);
+            divImagen3.appendChild(logoX);
+
+            divContenedor.appendChild(divImagen1);
+            divContenedor.appendChild(divImagen2);
+            divContenedor.appendChild(divImagen3);
+
+            header.appendChild(divContenedor);
+        }
+
+        header.style.width = '100vw';
+        header.style.height = '10vh';
+        header.style.backgroundColor = 'rgb(239, 226, 226)';
+        header.style.display = 'flex';
+        header.style.justifyContent = 'space-between';
+        header.style.alignItems = 'center';
+        //----------------------------------//
+   
+
+        document.body.appendChild(header);
+
+        imagenHeader();
+        listPrincipal();
+        redesSociales();
+    }
+    function crearCuerpo() {
+        let cuerpo = document.createElement('body');
+        let divToggle = document.createElement('div');
+
+        function toggle() {
+            let botonToggle = document.createElement('button');
+
+            botonToggle.style.width = '80px';
+            botonToggle.style.height = '30px'
+            botonToggle.style.backgroundColor = '#ccc'; // Fondo gris
+            botonToggle.style.border = 'none'; // Sin borde
+            botonToggle.style.color = '#fff'; // Texto blanco
+            botonToggle.style.padding = '10px 20px'; // Espaciado interno
+            botonToggle.style.borderRadius = '20px'; // Bordes redondeados
+
+            cuerpo.appendChild(botonToggle);
+        }
+    
+
+        cuerpo.style.backgroundColor = 'red'
+        cuerpo.style.height = '100vh';
+        cuerpo.style.width = '100vw';
+        cuerpo.style.display = 'flex';
+        cuerpo.style.justifyContent = 'start';
+        cuerpo.style.alignItems = 'center';
+        cuerpo.style.flexDirection = 'column';
+        cuerpo.style.maxWidth = '80%';
+        cuerpo.style.marginLeft = 'auto';
+        cuerpo.style.marginRight = 'auto';
+        cuerpo.style.maxWidth = '80%';
+        cuerpo.style.marginTop = '50px';
+
+
+
+
+
+        document.body.appendChild(cuerpo);
+
+        toggle();
+        
+    }
+
+
+    crearHeader();
+    crearCuerpo();
 </script>
 </html>
