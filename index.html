@@ -181,6 +181,24 @@
         cuerpo.style.height = "auto";
         cuerpo.style.marginLeft = "auto";
         cuerpo.style.marginRight = "auto";
+        document.body.style.backgroundColor ='rgb(240, 240, 240)';
+
+         // Crear botón 
+        const themeButton = document.createElement('button');
+        themeButton.textContent = 'Cambiar colores';
+        themeButton.id = 'themeButton';
+        themeButton.addEventListener('click', cambiarTema);
+
+        themeButton.style.padding = '10px 20px';
+        themeButton.style.backgroundColor = '#222';
+        themeButton.style.color = '#fff';
+        themeButton.style.border = 'none';
+        themeButton.style.borderRadius = '5px';
+        themeButton.style.cursor = 'pointer';
+        themeButton.style.outline = 'none';
+        
+        // Añadir botón al cuerpo del documento
+        document.body.appendChild(themeButton);
 
         // Función para crear la primera sección sobre el pasado de la IA
         function seccion1() {
@@ -408,7 +426,94 @@
         document.body.appendChild(cuerpo);
     }
 
+
+    function cambiarTema() {
+        const body = document.body;
+    
+        if (body.style.backgroundColor === 'rgb(240, 240, 240)') {
+            // Cambiar a tema oscuro
+            body.style.backgroundColor = '#222';
+            body.style.color = '#fff';
+            boton.textContent = 'Tema Claro';
+            
+        } else {
+            // Cambiar a tema claro
+            body.style.backgroundColor = '#f0f0f0';
+            body.style.color = '#333';
+            boton.textContent = 'Tema Oscuro';
+        }
+    }
+    
+   
+
+    function reset() {
+        // Box sizing rules
+        let elements = document.querySelectorAll('*');
+        elements.forEach(element => {
+            element.style.boxSizing = 'border-box';
+        });
+
+        // Remove default padding
+        let ulElements = document.querySelectorAll('ul[class], ol[class]');
+        ulElements.forEach(element => {
+            element.style.padding = '0';
+        });
+
+        // Remove default margin
+        let marginElements = document.querySelectorAll('body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd');
+        marginElements.forEach(element => {
+            element.style.margin = '0';
+        });
+
+        // Set core body defaults
+        document.body.style.minHeight = '100vh';
+        document.body.style.scrollBehavior = 'smooth';
+        document.body.style.textRendering = 'optimizeSpeed';
+        document.body.style.lineHeight = '1.5';
+
+        // Remove list styles on ul, ol elements with a class attribute
+        ulElements.forEach(element => {
+            element.style.listStyle = 'none';
+        });
+
+        // A elements that don't have a class get default styles
+        let aElements = document.querySelectorAll('a:not([class])');
+        aElements.forEach(element => {
+            element.style.textDecorationSkipInk = 'auto';
+        });
+
+        // Make images easier to work with
+        let imgElements = document.querySelectorAll('img');
+        imgElements.forEach(element => {
+            element.style.maxWidth = '100%';
+            element.style.display = 'block';
+        });
+
+        // Natural flow and rhythm in articles by default
+        let articleElements = document.querySelectorAll('article > * + *');
+        articleElements.forEach(element => {
+            element.style.marginTop = '1em';
+        });
+
+        // Inherit fonts for inputs and buttons
+        let inputElements = document.querySelectorAll('input, button, textarea, select');
+        inputElements.forEach(element => {
+            element.style.font = 'inherit';
+        });
+
+        // Remove all animations and transitions for people that prefer not to see them
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            elements.forEach(element => {
+                element.style.animationDuration = '0.01ms';
+                element.style.animationIterationCount = '1';
+                element.style.transitionDuration = '0.01ms';
+                document.body.style.scrollBehavior = 'auto';
+            });
+        }
+
+    }
     // Llamar a las funciones para crear el encabezado y el cuerpo
+    reset();
     crearHeader();
     crearCuerpo();
 </script>
