@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inteligencia Artificial JS </title>
+    <link rel="icon" href="assets/logoHeader.jpeg" type="image/jpeg">
 </head>
 <style>
  
@@ -17,131 +18,161 @@
 
 </body>
 <script>
-
+    // Función para crear el encabezado de la página
     function crearHeader() {
-        let header = document.createElement('header');
+        let header = document.createElement('header'); // Crear elemento header
         
+        // Función para agregar la imagen al encabezado
         function imagenHeader() {
+            // Crear elementos para contener la imagen del logo
             let divImagen = document.createElement('div');
             let logoHeader = document.createElement('img');
-            let logoSrc = 'assets/logoHeader.jpeg'
-            let logoAlt = "Logo de página"
+            let logoSrc = 'assets/logoHeader.jpeg';
+            let logoAlt = "Logo de página";
 
+            // Establecer atributos src y alt de la imagen del logo
             logoHeader.src = logoSrc;
             logoHeader.alt = logoAlt;
-            
-           
-            divImagen.style.width = '20%';
 
+            // Estilos para centrar la imagen dentro de su contenedor
+            divImagen.style.width = '20%';
             divImagen.style.height = '100%';
             divImagen.style.display = 'flex';
             divImagen.style.justifyContent = 'center';
             divImagen.style.alignItems = 'center';
 
+            // Estilos para la imagen del logo
             logoHeader.style.maxWidth = '100%';
             logoHeader.style.maxHeight = '100%';
             logoHeader.style.backgroundColor = 'red';
 
-      
-
+            // Agregar la imagen del logo al contenedor y luego al encabezado
             divImagen.appendChild(logoHeader);
             header.appendChild(divImagen);
         }
 
-        function listPrincipal() { //Funcion que crea la lista principal ("Pasado, presente y futuro")
-            let ul = document.createElement('ul');
-            let palabrasli = ["Pasado", "Presente", "Futuro"]
+        // Función para crear la lista principal en el encabezado
+        function listPrincipal() {
+            let ul = document.createElement('ul'); // Crear elemento ul
+            let palabrasli = ["Pasado", "Presente", "Futuro"]; // Palabras para los elementos de la lista
+
+            // Iterar sobre las palabras y crear un elemento li para cada una
             for (let i = 0; i < 3; i++) {
-            
-                let li = document.createElement('li');
-                li.textContent = palabrasli[i];
-    
+                let li = document.createElement('li'); // Crear elemento li
+                li.textContent = palabrasli[i]; // Establecer el texto del elemento li
+
+                // Agregar evento para cambiar el cursor al pasar sobre el elemento li
+                li.addEventListener('mouseenter', () => {
+                    li.style.cursor = "pointer";
+                });
+
+                // Estilos para los elementos de la lista
                 li.style.width = '180px';
                 li.style.height = '100%';
                 li.style.display = 'flex';
                 li.style.justifyContent = 'center';
                 li.style.alignItems = 'center';
                 li.style.fontSize = '25px';
-                li.style.fontFamily = "Arial" 
-    
+                li.style.fontFamily = "Arial";
+
+                // Agregar el elemento li a la lista ul
                 ul.appendChild(li);
             }
 
+            // Estilos para la lista ul
             ul.style.width = '60%';
             ul.style.height = '100%';
             ul.style.display = 'flex';
             ul.style.justifyContent = 'center';
             ul.style.alignItems = 'center';
 
+            // Agregar la lista al encabezado
             header.appendChild(ul);
         }
-        
-        function redesSociales() {
-            let divContenedor = document.createElement('div');
 
+        // Función para agregar las redes sociales al encabezado
+        function redesSociales() {
+            let divContenedor = document.createElement('div'); // Crear contenedor para redes sociales
+
+            // Crear elementos para cada red social
             let divImagen1 = document.createElement('div');
             let divImagen2 = document.createElement('div');
             let divImagen3 = document.createElement('div');
-            
             let logoGitHub = document.createElement('img');
             let logoLinkedIn = document.createElement('img');
             let logoX = document.createElement('img');
 
+            // Establecer atributos src y alt para las imágenes de las redes sociales
             logoGitHub.src = 'assets/github.svg';
             logoLinkedIn.src = 'assets/linkedin.svg';
             logoX.src = 'assets/x.svg';
-
             logoGitHub.alt = 'GitHub Logo';
             logoLinkedIn.alt = 'LinkedIn Logo';
             logoX.alt = 'X Logo';
 
+            // Agregar eventos para cambiar el cursor al pasar sobre las imágenes
+            logoGitHub.addEventListener('mouseenter', () => {
+                logoGitHub.style.cursor = "pointer"
+            });
+            logoLinkedIn.addEventListener('mouseenter', () => {
+                logoLinkedIn.style.cursor = "pointer"
+            });
+            logoX.addEventListener('mouseenter', () => {
+                logoX.style.cursor = "pointer"
+            });
 
-            //--------------------------------
+            // Estilos para las imágenes de las redes sociales
             logoGitHub.style.maxHeight = '100%';
-            logoGitHub.style.width = '46px'
+            logoGitHub.style.width = '46px';
             logoGitHub.style.marginRight = '10px';
             logoLinkedIn.style.maxHeight = '100%';
             logoLinkedIn.style.width = '50px';
             logoX.style.maxHeight = '100%';
-            logoX.style.width = '60px'
+            logoX.style.width = '60px';
             logoX.style.marginLeft = '10px';
 
-            //---------------------------------
+            // Estilos para el contenedor de redes sociales
             divContenedor.style.width = '20%';
             divContenedor.style.display = 'flex';
             divContenedor.style.justifyContent = 'center';
             divContenedor.style.alignItems = 'center';
 
-
+            // Agregar las imágenes de las redes sociales a sus contenedores respectivos
             divImagen1.appendChild(logoGitHub);
             divImagen2.appendChild(logoLinkedIn);
             divImagen3.appendChild(logoX);
 
+            // Agregar los contenedores al contenedor principal de redes sociales
             divContenedor.appendChild(divImagen1);
             divContenedor.appendChild(divImagen2);
             divContenedor.appendChild(divImagen3);
 
+            // Agregar el contenedor principal al encabezado
             header.appendChild(divContenedor);
         }
 
+        // Estilos para el encabezado
         header.style.width = '100vw';
         header.style.height = '10vh';
         header.style.backgroundColor = 'rgb(239, 226, 226)';
         header.style.display = 'flex';
         header.style.justifyContent = 'space-between';
         header.style.alignItems = 'center';
-        //----------------------------------//
-   
 
+        // Agregar el encabezado al cuerpo del documento HTML
         document.body.appendChild(header);
 
+        // Llamar a las funciones para agregar los elementos al encabezado
         imagenHeader();
         listPrincipal();
         redesSociales();
     }
-    function crearCuerpo() {
-       let cuerpo = document.createElement('div');
 
+    // Función para crear el cuerpo de la página
+    function crearCuerpo() {
+        let cuerpo = document.createElement('div'); // Crear elemento div para el cuerpo
+
+        // Estilos para el cuerpo
         cuerpo.style.display = "flex";
         cuerpo.style.justifyContent = "center";
         cuerpo.style.alignItems = "center";
@@ -151,54 +182,56 @@
         cuerpo.style.marginLeft = "auto";
         cuerpo.style.marginRight = "auto";
 
-
+        // Función para crear la primera sección sobre el pasado de la IA
         function seccion1() {
-            let seccion1 = document.createElement('div'); //Seccion1 
-    
-            let h1seccion1 = document.createElement('h1'); //Titulo Seccion1 
-            h1seccion1.textContent = "LA IA EN HACE AÑOS"
-            seccion1.appendChild(h1seccion1);
-    
-            let divTexto1 = document.createElement('div'); //Cuerpo para divs de textos
-            seccion1.appendChild(divTexto1);
-    
-            let texto1 = document.createElement('div'); // TEXTO 1 SECCION 1
+            let seccion1 = document.createElement('div'); // Crear elemento div para la sección
+            let h1seccion1 = document.createElement('h1'); // Crear elemento h1 para el título de la sección
+            h1seccion1.textContent = "LA IA EN HACE AÑOS"; // Establecer el texto del título
+            h1seccion1.style.fontFamily = "Courier New, monospace"; // Establecer la fuente del título
+            seccion1.appendChild(h1seccion1); // Agregar el título a la sección
+
+            let divTexto1 = document.createElement('div'); // Crear un div para los elementos de texto
+            seccion1.appendChild(divTexto1); // Agregar el div al contenido de la sección
+
+            let texto1 = document.createElement('div'); // Crear un div para el texto de la sección
             texto1.innerHTML = `<p>
-             La IA es muy buena y me gusta mucho, últimamente lo está haciendo muy bien y eso me gusta aún más.
-             </p>`;
-    
-            texto1.style.marginRight = "30px";
-            texto1.style.width = "50%"; // Ancho definido para el ejemplo
-            texto1.style.height = "100%"; // Altura definida para el ejemplo
-            texto1.style.display = "flex";
-            texto1.style.justifyContent = "center";
-            texto1.style.alignItems = "center";
-            texto1.style.padding = "10px";
-            texto1.style.fontSize = "20px";
-    
-    
-            let imagen1 = document.createElement('div');//TEXTO 2 SECCION 1
-            let image2 = document.createElement('img');
-            image2src = 'assets/logoHeader.jpeg';
-            image2.alt = "Imagen de IA 1";
-            imagen1.append(image2);
-    
+            Hace años, la inteligencia artificial (IA) se limitaba principalmente a sistemas expertos y algoritmos simbólicos que podían resolver 
+            tareas específicas, pero carecían de flexibilidad y capacidad de aprendizaje. Durante las últimas décadas, con avances en aprendizaje 
+            automático y procesamiento de datos, la IA ha experimentado una revolución. Hoy en día, la IA impulsa una amplia gama de aplicaciones, 
+            desde asistentes virtuales hasta vehículos autónomos, transformando radicalmente nuestra sociedad y cambiando la forma en que interactuamos con la tecnología y el mundo que nos rodea.
+             </p>`; // Establecer el contenido del texto
+            texto1.style.marginRight = "30px"; // Establecer márgen derecho
+            texto1.style.width = "50%"; // Establecer ancho
+            texto1.style.height = "100%"; // Establecer altura
+            texto1.style.display = "flex"; // Establecer display flex
+            texto1.style.justifyContent = "center"; // Centrar horizontalmente
+            texto1.style.alignItems = "center"; // Centrar verticalmente
+            texto1.style.padding = "10px"; // Establecer relleno
+            texto1.style.fontSize = "18px"; // Establecer tamaño de fuente
+
+            let imagen1 = document.createElement('div'); // Crear un div para la imagen
+            let image2 = document.createElement('img'); // Crear elemento img
+            image2.src = 'assets/pasado.webp'; // Establecer src de la imagen
+            image2.alt = "Imagen de IA 1"; // Establecer texto alternativo
+            imagen1.append(image2); // Agregar imagen al div
+
+            // Estilos para la imagen
             imagen1.style.marginLeft = "30px";
-            imagen1.style.width = "50%"; // Ancho definido para el ejemplo
-            imagen1.style.height = "100%"; // Altura definida para el ejemplo
+            imagen1.style.width = "50%";
+            imagen1.style.height = "100%";
             imagen1.style.display = "flex";
             imagen1.style.justifyContent = "center";
             imagen1.style.alignItems = "center";
             imagen1.style.padding = "10px";
-            image2.style.maxWidth = '100%';
-            image2.style.width = "80%";
-            image2.style.maxHeight = '100%';
-            image2.style.backgroundColor = 'red';
-    
-            divTexto1.appendChild(texto1); //Añadimos a la primera seccion ambos divs al mismo nivel
+            image2.style.maxWidth = '60%';
+            image2.style.width = "60%";
+            image2.style.maxHeight = '60%';
+
+            // Agregar elementos de texto e imagen al div de texto
+            divTexto1.appendChild(texto1);
             divTexto1.appendChild(imagen1);
-    
-            divTexto1.style.backgroundColor = "yellow";
+
+            // Estilos para el div de texto
             divTexto1.style.display = "flex";
             divTexto1.style.justifyContent = "center";
             divTexto1.style.alignItems = "center";
@@ -206,9 +239,9 @@
             divTexto1.style.marginLeft = "auto";
             divTexto1.style.marginRight = "auto";
             divTexto1.style.width = "100%";
-    
-    
-            seccion1.style.backgroundColor = 'blue';
+            divTexto1.style.fontFamily = "Segoe UI"; // Establecer fuente
+
+            // Estilos para la sección
             seccion1.style.display = "flex";
             seccion1.style.justifyContent = "center";
             seccion1.style.alignItems = "center";
@@ -216,70 +249,76 @@
             seccion1.style.height = "auto";
             seccion1.style.width = "100%";
             seccion1.style.marginTop = '20px';
-            return seccion1;
-        }
-    
-        let seccion1Element = seccion1();
-        cuerpo.appendChild(seccion1Element);
-       
-       
 
+            return seccion1; // Devolver la sección creada
+        }
+
+        let seccion1Element = seccion1(); // Crear la primera sección
+        cuerpo.appendChild(seccion1Element); // Agregar la sección al cuerpo
+
+        // Función para crear la segunda sección sobre el presente de la IA
         function seccion2() {
-            let seccion2 = document.createElement('div'); // Seccion2 
-        
-            let h1seccion2 = document.createElement('h1'); // Titulo Seccion2 
-            h1seccion2.textContent = "LA IA EN HACE AÑOS";
-            seccion2.appendChild(h1seccion2);
-        
-            let divTexto2 = document.createElement('div'); // Cuerpo para divs de textos
-            seccion2.appendChild(divTexto2);
-        
-            let texto2 = document.createElement('div'); // TEXTO 1 SECCION 2
+            let seccion2 = document.createElement('div'); // Crear elemento div para la sección
+            let h1seccion2 = document.createElement('h1'); // Crear elemento h1 para el título de la sección
+            h1seccion2.textContent = "LA IA EN LA ACTUALIDAD"; // Establecer el texto del título
+            h1seccion2.style.fontFamily = "Courier New, monospace"; // Establecer la fuente del título
+            seccion2.appendChild(h1seccion2); // Agregar el título a la sección
+
+            let divTexto2 = document.createElement('div'); // Crear un div para los elementos de texto
+            seccion2.appendChild(divTexto2); // Agregar el div al contenido de la sección
+
+            let texto2 = document.createElement('div'); // Crear un div para el texto de la sección
             texto2.innerHTML = `<p>
-                La IA es muy buena y me gusta mucho, últimamente lo está haciendo muy bien y eso me gusta aún más.
-            </p>`;
-            
-            texto2.style.marginRight = "30px";
-            texto2.style.width = "50%"; // Ancho definido para el ejemplo
-            texto2.style.height = "100%"; // Altura definida para el ejemplo
-            texto2.style.display = "flex";
-            texto2.style.justifyContent = "center";
-            texto2.style.alignItems = "center";
-            texto2.style.padding = "10px";
-            texto2.style.fontSize = "20px";
-        
-        
-            let imagen2 = document.createElement('div');// TEXTO 2 SECCION 2
-            let image2 = document.createElement('img');
-            image2.src = 'assets/logoHeader.jpeg';
-            image2.alt = "Imagen de IA 1";
-            imagen2.appendChild(image2);
-        
-            imagen2.style.marginLeft = "30px";
-            imagen2.style.width = "50%"; // Ancho definido para el ejemplo
-            imagen2.style.height = "100%"; // Altura definida para el ejemplo
+                Hoy en día, la inteligencia artificial (IA) ha revolucionado múltiples aspectos de nuestra vida.
+                Desde asistentes virtuales hasta vehículos autónomos, la IA está presente en una variedad de aplicaciones. 
+                Su capacidad para analizar datos a gran escala y tomar decisiones autónomas la convierte en una herramienta 
+                poderosa en campos como la medicina, la logística y la atención al cliente. Sin embargo, su rápido avance 
+                plantea desafíos éticos y sociales que deben ser abordados con cautela, incluyendo preocupaciones sobre privacidad 
+                y sesgo algorítmico. A pesar de estos desafíos, la IA promete seguir transformando nuestro mundo y ofreciendo nuevas 
+                oportunidades para mejorar nuestra calidad de vida.
+            </p>`; // Establecer el contenido del texto
+            texto2.style.marginLeft = "30px"; // Establecer margen izquierdo
+            texto2.style.width = "50%"; // Establecer ancho
+            texto2.style.height = "100%"; // Establecer altura
+            texto2.style.padding = "10px"; // Establecer relleno
+            texto2.style.fontSize = "18px"; // Establecer tamaño de fuente
+
+            let imagen2 = document.createElement('div'); // Crear un div para la imagen
+            let image2 = document.createElement('img'); // Crear elemento img
+            image2.src = 'assets/presente.webp'; // Establecer src de la imagen
+            image2.alt = "Imagen de IA 1"; // Establecer texto alternativo
+            imagen2.appendChild(image2); // Agregar imagen al div
+
+            // Estilos para la imagen
+            imagen2.style.width = "50%";
+            imagen2.style.height = "100%";
             imagen2.style.display = "flex";
             imagen2.style.justifyContent = "center";
             imagen2.style.alignItems = "center";
+            imagen2.style.flexDirection = "column";
             imagen2.style.padding = "10px";
-            image2.style.maxWidth = '100%';
-            image2.style.width = "80%";
-            image2.style.maxHeight = '100%';
+            imagen2.style.marginRight = "30px";
+            image2.style.maxWidth = '60%';
+            image2.style.width = "60%";
+            image2.style.maxHeight = '60%';
             image2.style.backgroundColor = 'red';
-        
-            divTexto2.appendChild(texto2); // Añadimos a la segunda sección ambos divs al mismo nivel
+
+            // Agregar elementos de texto e imagen al div de texto
             divTexto2.appendChild(imagen2);
-        
-            divTexto2.style.backgroundColor = "yellow";
+            divTexto2.appendChild(texto2);
+
+            // Estilos para el div de texto
+            divTexto2.style.height = "auto";
             divTexto2.style.display = "flex";
             divTexto2.style.justifyContent = "center";
             divTexto2.style.alignItems = "center";
-            divTexto2.style.height = "auto";
+            divTexto2.style.flexDirection = "row";
             divTexto2.style.marginLeft = "auto";
             divTexto2.style.marginRight = "auto";
             divTexto2.style.width = "100%";
-        
-            seccion2.style.backgroundColor = 'blue';
+            divTexto2.style.fontFamily = "Segoe UI"; // Establecer fuente
+
+            // Estilos para la sección
             seccion2.style.display = "flex";
             seccion2.style.justifyContent = "center";
             seccion2.style.alignItems = "center";
@@ -287,51 +326,89 @@
             seccion2.style.height = "auto";
             seccion2.style.width = "100%";
             seccion2.style.marginTop = '20px';
-        
-            return seccion2;
+
+            return seccion2; // Devolver la sección creada
         }
-       
-        let seccion2Element = seccion2();
-        cuerpo.appendChild(seccion2Element);
 
+        let seccion2Element = seccion2(); // Crear la segunda sección
+        cuerpo.appendChild(seccion2Element); // Agregar la sección al cuerpo
 
+        // Función para crear la tercera sección sobre el futuro de la IA
+        function seccion3() {
+            let seccion3 = document.createElement('div'); // Crear elemento div para la sección
+            let h1seccion3 = document.createElement('h1'); // Crear elemento h1 para el título de la sección
+            h1seccion3.textContent = "LA IA EN EL FUTURO"; // Establecer el texto del título
+            h1seccion3.style.fontFamily = "Courier New, monospace"; // Establecer la fuente del título
+            seccion3.appendChild(h1seccion3); // Agregar el título a la sección
 
+            let divTexto3 = document.createElement('div'); // Crear un div para los elementos de texto
+            seccion3.appendChild(divTexto3); // Agregar el div al contenido de la sección
 
+            let texto3 = document.createElement('div'); // Crear un div para el texto de la sección
+            texto3.innerHTML = `<p>
+                En un futuro próximo, la inteligencia artificial (IA) se convertirá en la columna vertebral de nuestra sociedad, permeando todos los aspectos de nuestras vidas. Desde la medicina personalizada hasta la gestión inteligente de recursos naturales, la IA se desplegará para resolver los desafíos más complejos de nuestra era. Sin embargo, este futuro también plantea importantes interrogantes éticos y sociales, incluyendo cuestiones sobre la privacidad de los datos, la autonomía individual y la distribución justa de los beneficios de la IA. A medida que avanzamos hacia este futuro, es crucial abordar estos desafíos de manera colaborativa y responsable, asegurando que la IA beneficie a toda la humanidad de manera equitativa y sostenible.
+            </p>`; // Establecer el contenido del texto
+            texto3.style.marginRight = "30px"; // Establecer margen derecho
+            texto3.style.width = "50%"; // Establecer ancho
+            texto3.style.height = "100%"; // Establecer altura
+            texto3.style.padding = "10px"; // Establecer relleno
+            texto3.style.fontSize = "18px"; // Establecer tamaño de fuente
 
+            let imagen3 = document.createElement('div'); // Crear un div para la imagen
+            let image3 = document.createElement('img'); // Crear elemento img
+            image3.src = 'assets/futuro.webp'; // Establecer src de la imagen
+            image3.alt = "Imagen de IA 1"; // Establecer texto alternativo
+            imagen3.appendChild(image3); // Agregar imagen al div
 
+            // Estilos para la imagen
+            imagen3.style.width = "50%";
+            imagen3.style.height = "100%";
+            imagen3.style.display = "flex";
+            imagen3.style.justifyContent = "center";
+            imagen3.style.alignItems = "center";
+            imagen3.style.flexDirection = "column";
+            imagen3.style.padding = "10px";
+            imagen3.style.marginLeft = "30px";
+            image3.style.maxWidth = '60%';
+            image3.style.width = "60%";
+            image3.style.maxHeight = '60%';
+            image3.style.backgroundColor = 'red';
 
+            // Agregar elementos de texto e imagen al div de texto
+            divTexto3.appendChild(texto3);
+            divTexto3.appendChild(imagen3);
 
+            // Estilos para el div de texto
+            divTexto3.style.height = "auto";
+            divTexto3.style.display = "flex";
+            divTexto3.style.justifyContent = "center";
+            divTexto3.style.alignItems = "center";
+            divTexto3.style.flexDirection = "row";
+            divTexto3.style.marginLeft = "auto";
+            divTexto3.style.marginRight = "auto";
+            divTexto3.style.width = "100%";
+            divTexto3.style.fontFamily = "Segoe UI"; // Establecer fuente
 
+            // Estilos para la sección
+            seccion3.style.display = "flex";
+            seccion3.style.justifyContent = "center";
+            seccion3.style.alignItems = "center";
+            seccion3.style.flexDirection = "column";
+            seccion3.style.height = "auto";
+            seccion3.style.width = "100%";
+            seccion3.style.marginTop = '20px';
 
+            return seccion3; // Devolver la sección creada
+        }
 
+        let seccion3Element = seccion3(); // Crear la tercera sección
+        cuerpo.appendChild(seccion3Element); // Agregar la sección al cuerpo
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       document.body.appendChild(cuerpo);
-        
+        // Establecer el cuerpo en el documento HTML
+        document.body.appendChild(cuerpo);
     }
 
-
+    // Llamar a las funciones para crear el encabezado y el cuerpo
     crearHeader();
     crearCuerpo();
 </script>
